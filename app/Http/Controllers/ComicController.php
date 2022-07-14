@@ -60,7 +60,9 @@ class ComicController extends Controller
     // MOSTRA una specifica risorsa (in questo caso l'id)
     public function show($id)
     {
-        //
+        $comics = Comic::find($id);
+
+        dd($comics);
     }
 
     /**
