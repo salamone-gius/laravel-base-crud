@@ -8,5 +8,15 @@
 
 @section('page-content')
     <h1>All comics</h1>
-    @dump($comics)
+    <ul>
+        @foreach ($comics as $comic)
+            <li>
+                <h2>Title: {{$comic->title}}</h2>
+                <p>{{$comic->description}}</p>
+                <h3>Series: {{$comic->series}}</h3>
+                <h3>Type: {{$comic->type}}</h3>
+                <h3>Price: $ {{$comic->price}}</h3>
+            </li>
+        @endforeach
+    </ul>
 @endsection
