@@ -58,11 +58,11 @@ class ComicController extends Controller
      */
 
     // MOSTRA una specifica risorsa (in questo caso l'id)
-    public function show($id)
+    // se passo al metodo show l'oggetto $comic istanziato con la classe Comic, passa il record in automatico iniettando il ::find (dependancy injection)
+    public function show(Comic $comic)
     {
-        $comics = Comic::find($id);
+        // $comics = Comic::find($id);
 
-        dd($comics);
     }
 
     /**
