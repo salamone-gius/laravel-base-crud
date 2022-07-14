@@ -13,7 +13,7 @@
             @foreach ($comics as $comic)
                 <li>
                     <img src="{{$comic->thumb}}" alt="">
-                    <a href="">
+                    <a href="{{route('comics.show', $comic['id'])}}">
                         <h2>Title: {{$comic->title}}</h2>
                     </a>
                     <p>{{$comic->description}}</p>
