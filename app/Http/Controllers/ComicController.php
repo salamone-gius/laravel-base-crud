@@ -21,7 +21,8 @@ class ComicController extends Controller
         // creo una query che prende TUTTI (all) i dati del modello Comic e li salvo in $comics
         $comics = Comic::all();
 
-        dd($comics);
+        // restituisco la view relativa e la tabella compattata
+        return view('comics.index', compact('comics'));
     }
 
     /**
