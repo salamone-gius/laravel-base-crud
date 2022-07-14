@@ -1,0 +1,26 @@
+h1 {
+  text-align: center;
+}
+
+.container {
+  width: 100 .container;
+  max-width: 80vw;
+  margin: 0 auto;
+}
+
+.container li {
+  list-style: none;
+  border: 1px solid gray;
+  margin: 2rem 0;
+  padding: 2rem;
+}
+
+.container li a {
+  text-decoration: none;
+  color: black;
+}
+
+.container li a:hover {
+  color: purple;
+}
+
