@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+// importo il modello
+use App\Comic;
+
 class ComicController extends Controller
 {
     /**
@@ -15,7 +18,10 @@ class ComicController extends Controller
     // mostra tutte le risorse nel database
     public function index()
     {
-        //
+        // creo una query che prende TUTTI (all) i dati del modello Comic e li salvo in $comics
+        $comics = Comic::all();
+
+        dd($comics);
     }
 
     /**
