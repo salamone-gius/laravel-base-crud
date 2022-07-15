@@ -16,7 +16,10 @@
                         <h2>{{$comic->title}}</h2>
                     </a>
                     <div class="flex padding">
-                        <a href="{{route('comics.edit', $comic['id'])}}">Edit</a>
+                        <div class="flex mini-box">
+                            <a href="{{route('comics.edit', $comic['id'])}}">Edit comic</a>
+                            <a href="{{route('comics.destroy', $comic['id'])}}">Delete comic</a>
+                        </div>
                     </div>
                 </li>
             @endforeach

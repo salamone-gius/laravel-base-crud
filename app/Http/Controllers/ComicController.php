@@ -63,7 +63,7 @@ class ComicController extends Controller
         // $newComic->sale_date = $data['sale_date'];
         // $newComic->type = $data['type'];
 
-        // con il mass assignment (metodo fill()) cambio tutto in una botta sola. Devo abilitarla anche nel model
+        // con il metodo fill() cambio tutto in una botta sola. Per poterlo usare devo abilitare il mass assignment nel model
         $newComic->fill($data);
 
         // inserisco il nuovo record a db
@@ -133,8 +133,13 @@ class ComicController extends Controller
      */
 
     // RIMUOVE una risorsa dalla tabella
-    public function destroy($id)
+    // passo il singolo comic
+    public function destroy(Comic $comic)
     {
-        //
+        // richiamo il metodo delete() che fa la cancellazione a db
+        $comic->delete();
+
+        // reindirizzo alla rotta index (aggiornata)
+        return redirect()->route('comics.index');
     }
 }
