@@ -17,8 +17,17 @@
                     </a>
                     <div class="flex padding">
                         <div class="flex mini-box">
-                            <a href="{{route('comics.edit', $comic['id'])}}">Edit comic</a>
-                            <a href="{{route('comics.destroy', $comic['id'])}}">Delete comic</a>
+                            <form action="{{route('comics.edit', $comic->id)}}" method="GET">
+                                @csrf
+                                <input class="form" type="submit" value="Edit comic">
+                            </form>
+
+                            {{-- devo passare il metodo DELETE attraverso un form con action alla route .destroy --}}
+                            <form action="{{route('comics.destroy', $comic->id)}}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <input class="form" type="submit" value="Delete comic">
+                            </form>
                         </div>
                     </div>
                 </li>
