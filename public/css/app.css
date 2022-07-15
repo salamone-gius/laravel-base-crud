@@ -1,4 +1,5 @@
-h1 {
+h1,
+h2 {
   text-align: center;
 }
 
@@ -10,17 +11,46 @@ h1 {
 
 .container li {
   list-style: none;
-  border: 1px solid gray;
+  border: 1px solid purple;
   margin: 2rem 0;
-  padding: 2rem;
 }
 
-.container li a {
+.container li.index-li {
+  border-radius: 5rem;
+}
+
+.container li.index-li:hover {
+  background-color: lightsteelblue;
+}
+
+.container li img {
+  width: 15vw;
+}
+
+.container li p {
+  text-align: justify;
+}
+
+a {
   text-decoration: none;
   color: black;
 }
 
-.container li a:hover {
+a:hover {
   color: purple;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.padding {
+  padding: 2rem;
+}
+
+.margin-top {
+  margin-top: 5rem;
 }
 

@@ -11,15 +11,10 @@
     <div class="container">
         <ul>
             @foreach ($comics as $comic)
-                <li>
-                    <img src="{{$comic->thumb}}" alt="">
+                <li class="index-li">
                     <a href="{{route('comics.show', $comic['id'])}}">
-                        <h2>Title: {{$comic->title}}</h2>
+                        <h2>{{$comic->title}}</h2>
                     </a>
-                    <p>{{$comic->description}}</p>
-                    <h3>Series: {{$comic->series}}</h3>
-                    <h3>Type: {{$comic->type}}</h3>
-                    <h3>Price: $ {{$comic->price}}</h3>
                 </li>
             @endforeach
         </ul>

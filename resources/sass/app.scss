@@ -1,4 +1,4 @@
-h1 {
+h1, h2 {
     text-align: center;
 }
 
@@ -9,19 +9,47 @@ h1 {
 
     li {
         list-style: none;
-        border: 1px solid gray;
+        border: 1px solid purple;
         margin: 2rem 0;
-        padding: 2rem;
 
-        a {
-            text-decoration: none;
-            color: black;
+        &.index-li {
+            border-radius: 5rem;
 
             &:hover {
-                color: purple;
+                background-color: lightsteelblue;
             }
         }
+
+        img {
+            width: 15vw;
+        }
+
+        p {
+            text-align: justify;
+        }
     }
-    
+}
+
+a {
+    text-decoration: none;
+    color: black;
+
+    &:hover {
+        color: purple;
+    }
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.padding {
+    padding:2rem;
+}
+
+.margin-top {
+    margin-top: 5rem;
 }
 
