@@ -15,6 +15,7 @@
                     </div>
                     <div class="padding">
                         <p>{{$comic->description}}</p>
+                        <h3>Sale data: {{date('d-m-Y', strtotime($comic->sale_date))}}</h3>
                         <h3>Series: {{$comic->series}}</h3>
                         <h3>Type: {{$comic->type}}</h3>
                         <h3>Price: {{$comic->price}} $</h3>
@@ -27,7 +28,3 @@
         </h2>
     </div>
 @endsection
-
-{{-- <a href="{{route('comics.show', $comic['id'])}}">
-    <h2>Title: {{$comic->title}}</h2>
-</a> --}}

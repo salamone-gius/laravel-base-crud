@@ -34,7 +34,7 @@ class ComicController extends Controller
     // restituisce una view con un form all'interno che servirà a CREARE una nuova risorsa
     public function create()
     {
-        //
+        return view('comics.create');
     }
 
     /**
@@ -45,9 +45,29 @@ class ComicController extends Controller
      */
 
     // quando l'utente fa submit del form, SALVA tutti i dati che sono contenuti nel form in un nuovo elemento (riga) della tabella
+    // qui riceviamo tutti i dati inseriti nel form
     public function store(Request $request)
     {
-        //
+        // recupero i dati dal form
+        $data = $request->all();
+
+        // creo un oggetto Comic
+        $newComic = new Comic();
+
+        // compilo tutte le colonne/proprietà con i dati del form
+        $newComic->title = $data['title'];
+        $newComic->description = $data['description'];
+        $newComic->thumb = $data['thumb'];
+        $newComic->price = $data['price'];
+        $newComic->series = $data['series'];
+        $newComic->sale_date = $data['sale_date'];
+        $newComic->type = $data['type'];
+
+        // inserisco il nuovo record a db
+        $newComic->save();
+
+        // reindirizzo alla view del comic appena creato
+        return redirect()->route('comics.show', $newComic->id);
     }
 
     /**

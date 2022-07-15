@@ -46,11 +46,21 @@ a:hover {
   align-items: center;
 }
 
+.flex.padding {
+  justify-content: center;
+}
+
 .padding {
   padding: 2rem;
 }
 
 .margin-top {
-  margin-top: 5rem;
+  margin-top: 4rem;
+}
+
+select,
+input,
+label {
+  width: 10rem;
 }
 
