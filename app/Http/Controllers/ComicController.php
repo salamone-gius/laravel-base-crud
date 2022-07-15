@@ -55,16 +55,16 @@ class ComicController extends Controller
         $newComic = new Comic();
 
         // compilo tutte le colonne/proprietà con i dati del form
-        $newComic->title = $data['title'];
-        $newComic->description = $data['description'];
-        $newComic->thumb = $data['thumb'];
-        $newComic->price = $data['price'];
-        $newComic->series = $data['series'];
-        $newComic->sale_date = $data['sale_date'];
-        $newComic->type = $data['type'];
+        // $newComic->title = $data['title'];
+        // $newComic->description = $data['description'];
+        // $newComic->thumb = $data['thumb'];
+        // $newComic->price = $data['price'];
+        // $newComic->series = $data['series'];
+        // $newComic->sale_date = $data['sale_date'];
+        // $newComic->type = $data['type'];
 
-        // mass assignement
-        // $newComic->fill($data);
+        // con il mass assignment (metodo fill()) cambio tutto in una botta sola. Devo abilitarla anche nel model
+        $newComic->fill($data);
 
         // inserisco il nuovo record a db
         $newComic->save();
@@ -110,9 +110,19 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+
+    // attraverso la dependency injection gli passo il Comic
+    public function update(Request $request, Comic $comic)
     {
-        //
+        // salvo tutti i dati che mi arrivano dal form in $data
+        $data = $request->all();
+
+        // metodo update al singolo comic passandogli $data
+        // per fare questo devo aver abilitato il mass assignment
+        $comic->update($data);
+
+        // reindirizzo alla rotta show del singolo comic (già aggiornato con le modifiche)
+        return redirect()->route('comics.show', $comic->id);
     }
 
     /**
