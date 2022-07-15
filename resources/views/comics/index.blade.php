@@ -15,6 +15,9 @@
                     <a href="{{route('comics.show', $comic['id'])}}">
                         <h2>{{$comic->title}}</h2>
                     </a>
+                    <div class="flex padding">
+                        <a href="{{route('comics.edit', $comic['id'])}}">Edit</a>
+                    </div>
                 </li>
             @endforeach
         </ul>

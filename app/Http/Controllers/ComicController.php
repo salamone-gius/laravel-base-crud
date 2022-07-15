@@ -96,10 +96,11 @@ class ComicController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    
-    public function edit($id)
+    // attraverso la dependency injection gli passo il Comic
+    public function edit(Comic $comic)
     {
-        //
+        // restituisco la view /comics/edit e il comic formattato
+        return view('comics.edit', compact('comic'));
     }
 
     /**
