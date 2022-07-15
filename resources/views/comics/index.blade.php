@@ -20,6 +20,8 @@
                     </div>
                 </li>
             @endforeach
-        </ul>
+        <div class="flex padding">
+            <a href="{{route('comics.create')}}">Create new comic</a>
+        </div>
     </div>
 @endsection
