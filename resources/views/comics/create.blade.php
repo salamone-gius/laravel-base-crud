@@ -8,7 +8,8 @@
     <h1>Create New Comic</h1>
     <div class="container">
         <div class="flex padding">
-            <form action="{{route('comics.store')}}" method="POST" @csrf>
+            <form action="{{route('comics.store')}}" method="POST">
+                @csrf
                 <label for="new-title">Title:</label><br>
                 <input type="text" id="new-title" name="title"><br><br>
 
@@ -23,15 +24,20 @@
                     <option disabled selected></option>
                     <option value="comic book">Comic book</option>
                     <option value="graphic novel">Graphic novel</option>
-                  </select><br><br>
+                </select><br><br>
 
-                  <label for="new-description">Description:</label><br>
-                  <textarea id="new-description" name="description"></textarea><br><br>
+                <label for="new-description">Description:</label><br>
+                <textarea id="new-description" name="description"></textarea><br><br>
  
-                  {{-- <label for="new-price">Price:</label><br>
-                  <input type="number" id="new-price" name="price"><br><br> --}}
-  
-                <input  class="margin-top" type="submit" value="Submit">
+                <label for="new-price">Price:</label><br>
+                <input type="number" id="new-price" required name="price" min="0" value="0" step="any"><br><br>
+
+                <label for="new-sale-date">Sale date:</label><br>
+                <input type="date" id="new-sale-date" name="sale_date"><br><br>
+
+                <div>
+                    <input class="margin-top" type="submit" value="Submit">
+                </div>
             </form>
         </div>
         <h2 class="margin-top">

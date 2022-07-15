@@ -63,6 +63,9 @@ class ComicController extends Controller
         $newComic->sale_date = $data['sale_date'];
         $newComic->type = $data['type'];
 
+        // mass assignement
+        // $newComic->fill($data);
+
         // inserisco il nuovo record a db
         $newComic->save();
 
